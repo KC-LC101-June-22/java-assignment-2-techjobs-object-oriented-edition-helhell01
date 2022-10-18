@@ -49,6 +49,56 @@ public class Job {
         return Objects.hash(id);
     }
 
+    @Override
+    public String toString() {
+
+        String stringID = String.valueOf(this.getId());
+
+        String stringName;
+        if (this.name == null || this.name == "") {
+            stringName = "Data not available";
+        } else {
+            stringName = String.valueOf(this.getName());
+        }
+
+        String stringEmployer;
+        if (this.employer.getValue() == null || this.employer.getValue() == "") {
+            stringEmployer = "Data not available";
+        } else {
+            stringEmployer = String.valueOf(this.getEmployer());
+        }
+
+        String stringLocation;
+        if (this.location.getValue() == null || this.location.getValue() == "") {
+            stringLocation = "Data not available";
+        } else {
+            stringLocation = String.valueOf(this.getLocation());
+        }
+
+        String stringPositionType;
+        if (this.positionType.getValue() == null || this.positionType.getValue() == "") {
+            stringPositionType = "Data not available";
+        } else {
+            stringPositionType = String.valueOf(this.getPositionType());
+        }
+
+        String stringCoreCompetency;
+        if (this.coreCompetency.getValue() == null || this.getCoreCompetency().getValue() == "") {
+            stringCoreCompetency = "Data not available";
+        } else {
+            stringCoreCompetency = String.valueOf(this.getCoreCompetency());
+        }
+
+        return "\n" +
+                "ID: " + stringID + "\n" +
+                "Name: " + stringName + "\n" +
+                "Employer: " + stringEmployer + "\n" +
+                "Location: " + stringLocation + "\n" +
+                "Position Type: " + stringPositionType + "\n" +
+                "Core Competency: " + stringCoreCompetency + "\n";
+
+    }
+
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
